@@ -29,7 +29,7 @@ export default function Navbar() {
    * Syncs the search input with the URL query parameter 'q'.
    * Clears the input if the user navigates away from the search page.
    */
-  useEffect(function() {
+  useEffect(() => {
     const params = new URLSearchParams(location.search)
     const q = params.get('q')
     if (q) {
@@ -39,22 +39,24 @@ export default function Navbar() {
     }
   }, [location])
 
-  function getQuickResults() {
-    if (searchQuery.trim().length < 2) return []
-    const lowQuery = searchQuery.toLowerCase()
-    return products.filter(function(p) {
-      return p.title.toLowerCase().indexOf(lowQuery) !== -1 || 
-             p.category.toLowerCase().indexOf(lowQuery) !== -1
-    }).slice(0, 6)
-  }
-  
-  const quickResults = getQuickResults()
+  /**
+   * Filters products based on the search query for the quick-results dropdown.
+   */
+  const quickResults = searchQuery.trim().length >= 2
+    ? products.filter(p =>
+      p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.category.toLowerCase().includes(searchQuery.toLowerCase())
+    ).slice(0, 6)
+    : []
 
-  function handleSearch(e) {
+  /**
+   * Navigates to the search results page when the user presses Enter or clicks Search.
+   */
+  const handleSearch = (e) => {
     if (e.key === 'Enter' || e.type === 'click') {
       if (searchQuery.trim()) {
         setShowSearchDropdown(false)
-        navigate('/search?q=' + encodeURIComponent(searchQuery.trim()))
+        navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`)
       }
     }
   }

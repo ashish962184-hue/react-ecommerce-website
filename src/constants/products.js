@@ -159,7 +159,7 @@ export const PRODUCTS = [
     price: 999,
     description: "Brighten and even out your skin tone. Formulated with 15% pure Vitamin C and Hyaluronic Acid.",
     category: "beauty",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?q=80&w=800&auto=format&fit=crop",
     rating: { rate: 4.8, count: 890 },
     offer: true,
     offerLabel: "TOP RATED"
@@ -170,16 +170,16 @@ export const PRODUCTS = [
     price: 1499,
     description: "Wake up to radiant skin. A potent blend of botanical oils that works overnight.",
     category: "beauty",
-    image: "https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1556228578-8c7c0f44bb0b?q=80&w=800&auto=format&fit=crop",
     rating: { rate: 4.7, count: 540 }
   },
   {
-    id: 403,
+    id: 402,
     title: "Matte Liquid Lipstick Set",
     price: 1299,
     description: "6 long-wearing, smudge-proof shades ranging from nude to bold red.",
     category: "beauty",
-    image: "https://images.unsplash.com/photo-1586773860418-d3b9a8ec8172?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop",
   }
 ];
 

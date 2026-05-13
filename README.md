@@ -90,4 +90,3 @@ Use **any valid email** + **any password (6+ characters)** to sign in.
 - **Axios** — HTTP client
 - **Vite** — Build tool & dev server
 - **Fake Store API** — `https://fakestoreapi.com`
-# react-ecommerce-website

@@ -34,7 +34,7 @@ export default function ProductCard({ product }) {
         overflow: 'hidden',
         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
       }}
-      onClick={function() { navigate('/product/' + product.id) }}
+      onClick={() => navigate(`/product/${product.id}`)}
     >
       {/* Offer Badge */}
       {product.offer && (
@@ -58,13 +58,13 @@ export default function ProductCard({ product }) {
 
       {/* Wishlist Toggle Button (Stops propagation to prevent card click) */}
       <button 
-        onClick={function(e) {
+        onClick={(e) => {
           e.stopPropagation()
           toggleWishlist(product)
           showToast(
             isFavorite
               ? 'Removed from wishlist'
-              : (product.title.length > 30 ? product.title.slice(0, 30) + '...' : product.title) + ' added to wishlist',
+              : `${product.title.length > 30 ? product.title.slice(0, 30) + '...' : product.title} added to wishlist`,
             'wishlist'
           )
         }}
@@ -118,8 +118,8 @@ export default function ProductCard({ product }) {
             objectFit: 'contain',
             transition: 'transform 0.5s ease'
           }} 
-          onMouseEnter={function(e) { e.target.style.transform = 'scale(1.1)' }}
-          onMouseLeave={function(e) { e.target.style.transform = 'scale(1)' }}
+          onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
+          onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
         />
       </div>
 
@@ -169,10 +169,10 @@ export default function ProductCard({ product }) {
               gap: 8,
               boxShadow: '0 4px 12px rgba(74, 144, 226, 0.2)',
             }}
-            onClick={function(e) {
+            onClick={(e) => {
               e.stopPropagation()
               addToCart(product)
-              showToast((product.title.length > 30 ? product.title.slice(0, 30) + '...' : product.title) + ' added to cart', 'success')
+              showToast(`${product.title.length > 30 ? product.title.slice(0, 30) + '...' : product.title} added to cart`, 'success')
             }}
           >
             <svg style={{ width: 18, height: 18, fill: 'currentColor' }} viewBox="0 0 24 24">
